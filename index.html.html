@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Movie Data Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@24,400,0,0" />
+    
+</head>
+
+<body>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="searchInput" placeholder="Search movies by title..." onkeyup="searchMovie()">
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1>🎬 Netflix Movie Analysis</h1>
+        <p>Explore 100+ movies with detailed ratings, popularity & more</p>
+    </header>
+
+    
+   <!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3 id="totalMovies">0</h3>
+            <p>Total Movies</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="highPopularity">0</h3>
+            <p>High Popularity</p>
+            <p class="popularity-high">High</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="mediumPopularity">0</h3> <!-- fixed -->
+            <p>Medium Popularity</p>
+            <p class="popularity-medium">Medium</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="lowPopularity">0</h3> <!-- added -->
+            <p>Low Popularity</p>
+            <p class="popularity-low">Low</p>
+        </div>
+
+        <!-- Change the last two stat-cards -->
+       <div class="stat-card">
+            <h3 id="englishMovies">0</h3>
+            <p>English Movies</p>
+        </div>
+        
+        <div class="stat-card">
+            <h3 id="hindiMovies">0</h3>
+            <p>Hindi Movies</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="otherMovies">0</h3>
+            <p>Other Movies</p>
+        </div>
+
+            
+
+    </div>
+</section>
+
+
+    <!-- Main Section -->
+    <section class="container">
+        <div class="section-header">
+            <h2>🎥 Featured Movies</h2>
+            <div class="filters">
+                <button onclick="filterMovies('all')" class="filter-btn active">All</button>
+                <button onclick="filterMovies('Action')" class="filter-btn">Action</button>
+                <button onclick="filterMovies('Thriller')" class="filter-btn">Thriller</button>
+                <button onclick="filterMovies('Comedy')" class="filter-btn">Comedy</button>
+                <button onclick="filterMovies('Romance')" class="filter-btn">Romance</button>
+                <button onclick="filterMovies('Historical')" class="filter-btn">Historical</button>
+                <button onclick="filterMovies('High')" class="filter-btn">High Popularity</button>
+                <button onclick="filterMovies('Medium')" class="filter-btn">Medium Popularity</button>
+                <button onclick="filterMovies('Low')"class="filter-btn" >Low Popularity</button>
+                <button onclick="filterMovies('English')"class="filter-btn">English Movie</button>
+                <button onclick="filterMovies('Hindi')"class="filter-btn">Hindi Movies</button>
+                <button onclick="filterMovies('Other')" class="filter-btn">🌍 Other</button>
+            </div>
+        </div>
+
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movie cards will be populated by JavaScript -->
+        </div>
+        
+    </section>
+
+    <script src="index.js"></script>
+    <script src="languagemovie.js"></script>
+    <script src="moviecalculation.js"></script>
+    
+</body>
+</html>
